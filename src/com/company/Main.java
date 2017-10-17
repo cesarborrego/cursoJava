@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.Casting.EjemploConversionObjetos;
 import com.company.ModificadorAcceso.ModificadorAcceso2;
 import com.company.ModificadorAcceso.paquete1.ModificadorAcceso3;
 import com.company.Sobreescritura.Empleado;
@@ -29,7 +30,8 @@ public class Main {
         //callModificadorAcceso();
         //callSobreescritura();
         //callPolimorfismo();
-        callEjemploInstanceOf();
+        //callEjemploInstanceOf();
+        callEjemploCating();
     }
 
     private static void callAritmetica() {
@@ -102,5 +104,9 @@ public class Main {
 
     private static void callEjemploInstanceOf() {
         new EjemploInstanceOf();
+    }
+
+    private static void callEjemploCating() {
+        new EjemploConversionObjetos();
     }
 }
