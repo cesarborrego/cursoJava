@@ -3,8 +3,17 @@ package com.company;
 import com.company.Casting.EjemploConversionObjetos;
 import com.company.ClaseObject.ClaseObject;
 import com.company.ClasesAbstractas.EjemploClasesAbstractas;
+import com.company.Colecciones.ManejoColecciones;
+import com.company.EntradaDatos.EntradaDatos;
+import com.company.EntradaDatos.EntradaDatosScanner;
+import com.company.Excepciones.ManejoExcepciones1;
+import com.company.Excepciones.ManejoExcepcionesArg;
+import com.company.Excepciones.OperationException;
+import com.company.Genericos.ManejoColeccionesGenercias;
+import com.company.Genericos.ManejoGenericos;
 import com.company.ModificadorAcceso.ModificadorAcceso2;
 import com.company.ModificadorAcceso.paquete1.ModificadorAcceso3;
+import com.company.PropiedadesSistema.PropiedadesSistema;
 import com.company.Sobreescritura.Empleado;
 import com.company.Sobreescritura.Gerente;
 import com.company.bloquescodigo.PersonaBloques;
@@ -29,13 +38,25 @@ public class Main {
         //callContinentes();
         //callPersonaBloqueCodigo();
         //callAutoboxing();
-        //callModificadorAcceso();
+        //callModificadorAcceso();2
         //callSobreescritura();
         //callPolimorfismo();
         //callEjemploInstanceOf();
         //callEjemploCating();
         //callClaseObject();
-        callEjemploClaseAbstracta();
+        //callEjemploClaseAbstracta();
+        //new ManejoExcepciones1();
+//        try {
+//            new ManejoExcepcionesArg(args);
+//        } catch (OperationException e) {
+//            e.printStackTrace();
+//        }
+        //new ManejoColecciones();
+        //new ManejoGenericos();
+        //new ManejoColeccionesGenercias();
+        //new PropiedadesSistema();
+        //new EntradaDatos();
+        new EntradaDatosScanner();
     }
 
     private static void callAritmetica() {
