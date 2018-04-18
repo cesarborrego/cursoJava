@@ -4,6 +4,9 @@ import com.company.Casting.EjemploConversionObjetos;
 import com.company.ClaseObject.ClaseObject;
 import com.company.ClasesAbstractas.EjemploClasesAbstractas;
 import com.company.Colecciones.ManejoColecciones;
+import com.company.Constantes.Constantes;
+import com.company.EntradaDatos.Calculadora.Calculadora;
+import com.company.EntradaDatos.Calculadora.Operaciones;
 import com.company.EntradaDatos.EntradaDatos;
 import com.company.EntradaDatos.EntradaDatosScanner;
 import com.company.Excepciones.ManejoExcepciones1;
@@ -11,17 +14,22 @@ import com.company.Excepciones.ManejoExcepcionesArg;
 import com.company.Excepciones.OperationException;
 import com.company.Genericos.ManejoColeccionesGenercias;
 import com.company.Genericos.ManejoGenericos;
+import com.company.Interfaces.ManejoInterfaces;
 import com.company.ModificadorAcceso.ModificadorAcceso2;
 import com.company.ModificadorAcceso.paquete1.ModificadorAcceso3;
 import com.company.PropiedadesSistema.PropiedadesSistema;
 import com.company.Sobreescritura.Empleado;
 import com.company.Sobreescritura.Gerente;
+import com.company.Utileria.AccionesArchivos;
+import com.company.Utileria.ManejadorArchivos;
 import com.company.bloquescodigo.PersonaBloques;
 import com.company.enumeraciones.Continentes;
 import com.company.enumeraciones.Dias;
 import com.company.enumeraciones.EjemploEnumeraciones;
 import com.company.instanceof_ejemplo.EjemploInstanceOf;
 import com.company.javadoc.Aritmetica;
+
+import java.util.Scanner;
 
 /**
  * @author Cesar Segura Granados
@@ -54,9 +62,12 @@ public class Main {
         //new ManejoColecciones();
         //new ManejoGenericos();
         //new ManejoColeccionesGenercias();
+        //new ManejoInterfaces();
         //new PropiedadesSistema();
         //new EntradaDatos();
-        new EntradaDatosScanner();
+        //new EntradaDatosScanner();
+        //calculadora();
+        archivos();
     }
 
     private static void callAritmetica() {
@@ -83,8 +94,8 @@ public class Main {
 
     private static void callPersonaBloqueCodigo() {
         PersonaBloques p1 = new PersonaBloques();
-            int id = p1.getIdPersona();
-            System.out.println(id);
+        int id = p1.getIdPersona();
+        System.out.println(id);
 
     }
 
@@ -141,5 +152,44 @@ public class Main {
 
     private static void callEjemploClaseAbstracta() {
         new EjemploClasesAbstractas();
+    }
+
+    private static void calculadora() {
+        System.out.println("Que operación deseas realizar?");
+        System.out.println("1.- Suma");
+        System.out.println("2.- Resta");
+        System.out.println("3.- Multiplicación");
+        System.out.println("4.- División");
+        Scanner scanner = new Scanner(System.in);
+        int operacion = scanner.nextInt();
+        System.out.println("Operación seleccionada " + new Calculadora().tipoOperacion(operacion) +"\n");
+        System.out.println("Introduce el primer valor");
+        int a = scanner.nextInt();
+        System.out.println("Introduce el segundo valor");
+        int b = scanner.nextInt();
+        Operaciones operaciones = new Calculadora(a, b);
+        switch (operacion) {
+            case 1:
+                System.out.println("Resultado " + operaciones.sumar());
+                break;
+            case 2:
+                System.out.println("Resultado " + operaciones.resta());
+                break;
+            case 3:
+                System.out.println("Resultado " + operaciones.multiplica());
+                break;
+            case 4:
+                System.out.println("Resultado " + operaciones.divide());
+                break;
+        }
+    }
+
+    private static void archivos(){
+        AccionesArchivos accionesArchivos = new ManejadorArchivos(Constantes.NOMBRE_ARCHIVO);
+        accionesArchivos.crearArchivo();
+        accionesArchivos.escribirArchivo();
+        accionesArchivos.leerArchivo();
+        accionesArchivos.anexarArchivo();
+        accionesArchivos.leerArchivo();
     }
 }

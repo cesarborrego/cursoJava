@@ -1,7 +1,5 @@
 package com.company.Interfaces;
 
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
-
 /**
  * @author Cesar Segura Granados 17,octubre,2017
  * @version 1.0
